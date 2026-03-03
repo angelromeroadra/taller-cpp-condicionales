@@ -1,0 +1,57 @@
+#include <iostream>
+
+int main() {
+
+    double a, b, c, x, y, mayor;
+
+    std::cout << "Ingrese el lado a: ";
+       std::cin >> a;
+    std::cout << "Ingrese el lado b: ";
+       std::cin >> b;
+    std::cout << "Ingrese el lado c: ";
+       std::cin >> c;
+
+if (a > 0 && b > 0 && c > 0 && 
+        a + b > c && a + c > b && b + c > a) {
+
+        cout << "Es un triangulo valido.\n";
+
+        if (a == b && b == c) {
+            cout << "Es Equilatero\n";
+        }
+        else if (a == b || a == c || b == c) {
+            cout << "Es Isosceles\n";
+        }
+        else {
+            cout << "Es Escaleno\n";
+if (a >= b && a >= c) {
+            mayor = a;
+            x = b;
+            y = c;
+        }
+        else if (b >= a && b >= c) {
+            mayor = b;
+            x = a;
+            y = c;
+        }
+        else {
+            mayor = c;
+            x = a;
+            y = b;
+        }
+if (mayor * mayor == x * x + y * y) {
+            cout << "Es un Rectangulo\n";
+        }
+        else if (mayor * mayor < x * x + y * y) {
+            cout << "Es un Acutangulo\n";
+        }
+        else {
+            cout << "Es un Obtusangulo\n";
+        }
+
+    } else {
+        cout << "No forman un triangulo valido.\n";
+    }
+
+    return 0;
+}
