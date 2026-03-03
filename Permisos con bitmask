@@ -1,0 +1,32 @@
+#include <iostream>
+int main() {
+    int permisos, LEER, ESCRIBIR, EJECUTAR;
+
+LEER = 1;  
+ESCRIBIR = 2; 
+EJECUTAR = 4; 
+    
+    std::cout << "Ingrese un valor entero de permisos (0-7): ";
+    std::cin >> permisos;
+
+    std::cout << "Permisos actuales:\n";
+
+    if (permisos & LEER)
+        std::cout << "Tiene permiso de LEER\n";
+    else
+        std::cout << "No tiene permiso de LEER\n";
+
+    if (permisos & ESCRIBIR)
+        std::cout << "Tiene permiso de ESCRIBIR\n";
+    else
+        std::cout << "No tiene permiso de ESCRIBIR\n";
+
+    if (permisos & EJECUTAR)
+        std::cout << "Tiene permiso de EJECUTAR\n";
+    else
+        std::cout << "No tiene permiso de EJECUTAR\n";
+
+    std::cout << "Nuevo valor de permisos: " << permisos;
+
+    return 0;
+}
