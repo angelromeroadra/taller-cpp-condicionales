@@ -1,0 +1,61 @@
+#include <iostream>
+
+int main() {
+
+    double monto;
+    double descuento = 0.0;
+    char tipoCliente;      // 'V' = VIP, 'N' = Normal
+    char cupon;            // 'A', 'B', 'C'
+    bool finDeSemana;
+
+    std::cout << "Monto de compra: ";
+    std::cin >> monto;
+
+    std::cout << "Tipo de cliente (V = VIP, N = Normal): ";
+    std::cin >> tipoCliente;
+
+    std::cout << "Codigo de cupon (A, B, C, X=ninguno): ";
+    std::cin >> cupon;
+
+    std::cout << "Es fin de semana? (1 = Si, 0 = No): ";
+    std::cin >> finDeSemana;
+
+    // Descuento por cliente
+    if (tipoCliente == 'V') {
+        descuento += 0.20;
+    } else if (tipoCliente == 'N') {
+        descuento += 0.10;
+    }
+
+    // Descuento por monto
+    if (monto > 1000) {
+        descuento += 0.10;
+    } else if (monto > 500) {
+        descuento += 0.05;
+    }
+
+    // Descuento por cupon
+    switch (cupon) {
+        case 'A': descuento += 0.05; break;
+        case 'B': descuento += 0.10; break;
+        case 'C': descuento += 0.15; break;
+        default: break;
+    }
+
+    // Extra fin de semana
+    if (finDeSemana && monto > 300) {
+        descuento += 0.05;
+    }
+
+    // Limitar a 50%
+    if (descuento > 0.50) {
+        descuento = 0.50;
+    }
+
+    double precioFinal = monto * (1 - descuento);
+
+    std::cout << "\nDescuento total aplicado: " << descuento * 100 << "%\n";
+    std::cout << "Precio final: " << precioFinal << "\n";
+
+    return 0;
+}
