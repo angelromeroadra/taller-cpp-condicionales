@@ -1,0 +1,50 @@
+#include <iostream>
+
+int main() {
+    int a, b, x, y, temp;
+
+    a = 10;
+    b = 5;
+    x = a
+    y = b
+
+    std::cout << "Valores originales: a = " << a << ", b = " << b << "\n\n";
+
+    // Metodo 1: Variable temporal
+    {
+        std::cout << "Metodo 1 (temporal)\n";
+        std::cout << "Antes: x=" << x << ", y=" << y << "\n";
+
+        temp = x;
+        x = y;
+        y = temp;
+
+        std::cout << "Despues: x=" << x << ", y=" << y << "\n\n";
+    }
+
+    // Metodo 2: Aritmetico
+    {
+        std::cout << "Metodo 2 (aritmetico)\n";
+        std::cout << "Antes: x=" << x << ", y=" << y << "\n";
+
+        x += y;
+        y = x - y;
+        x -= y;
+
+        std::cout << "Despues: x=" << x << ", y=" << y << "\n\n";
+    }
+
+    // Metodo 3: XOR
+    {
+        std::cout << "Metodo 3 (XOR)\n";
+        std::cout << "Antes: x=" << x << ", y=" << y << "\n";
+
+        x ^= y;
+        y ^= x;
+        x ^= y;
+
+        std::cout << "Despues: x=" << x << ", y=" << y << "\n\n";
+    }
+
+    return 0;
+}
