@@ -1,0 +1,52 @@
+#include <iostream>
+
+int main() {
+    double num1, num2;
+    char operador;
+
+    std::cout << "Ingrese el primer numero: ";
+    std::cin >> num1;
+
+    std::cout << "Ingrese el operador: ";
+    std::cin >> operador;
+
+    std::cout << "Ingrese el segundo numero: ";
+    std::cin >> num2;
+
+    switch (operador) {
+
+        case '+':
+            std::cout << "Resultado: " << num1 + num2 << std::endl;
+            break;
+
+        case '-':
+            std::cout << "Resultado: " << num1 - num2 << std::endl;
+            break;
+
+        case '*':
+            std::cout << "Resultado: " << num1 * num2 << std::endl;
+            break;
+
+        case '/':
+            if (num2 == 0) {
+                std::cout << "Error: Division por cero no permitida." << std::endl;
+            } else {
+                std::cout << "Resultado: " << num1 / num2 << std::endl;
+            }
+            break;
+
+        case '%':
+            if (num2 == 0) {
+                std::cout << "Error: Modulo por cero no permitido." << std::endl;
+            } else {
+                std::cout << "Resultado: " 
+                          << num1 % num2 << std::endl;
+            }
+            break;
+
+        default:
+            std::cout << "Error: Operador no valido." << std::endl;
+    }
+
+    return 0;
+}
