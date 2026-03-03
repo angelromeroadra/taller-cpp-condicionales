@@ -1,0 +1,17 @@
+#include <iostream>
+
+int main(){
+    
+    double cel, far, kel, ran;
+    
+    std::cout<< "Porfavor ingrese la temperatura (Celsius)";
+    std::cin>> cel;
+    
+    far= (cel*1.8)+32;
+    kel= cel+273.15;
+    ran= (cel*9/5)+491.67;
+    
+    std:cout<< "farenheit" << far\n << "kelvin" << kel\n << "rankine" << ran\n;
+    
+    return 0;
+}
